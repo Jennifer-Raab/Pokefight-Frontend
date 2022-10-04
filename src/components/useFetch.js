@@ -11,11 +11,13 @@ function useFetch() {
   async function getPokemons() {
     try {
       const response = await fetch("http://localhost:8080/pokemons");
+      if (!response.ok) {
+        throw new Error(`Fetch failed with a status of ${response.status}`);
+      }
       const data = await response.json();
       setPokemons(data);
     } catch (err) {
-      console.error(err);
-      throw err;
+      console.error(err.message);
     }
   }
 

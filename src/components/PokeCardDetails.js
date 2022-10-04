@@ -49,8 +49,8 @@ export default function ActionAreaCard() {
                   <li>HP:{currentPokemon.base.HP}</li>
                   <li>Attack:{currentPokemon.base.Attack}</li>
                   <li>Defense:{currentPokemon.base.Defense}</li>
-                  <li>sp Attack:{currentPokemon.base["Sp.Attack"]}</li>
-                  <li>sp Defense:{currentPokemon.base["Sp.Defense"]}</li>
+                  <li>sp Attack:{currentPokemon.base.Sp[" Attack"]}</li>
+                  <li>sp Defense:{currentPokemon.base.Sp[" Defense"]}</li>
                 </ul>
               </Typography>
               <Button variant="contained">more Information</Button>
