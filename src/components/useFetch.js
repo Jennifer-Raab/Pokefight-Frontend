@@ -18,6 +18,7 @@ function useFetch() {
       throw err;
     }
   }
+
   return pokemons;
 }
 export default useFetch;

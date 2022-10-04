@@ -1,41 +1,43 @@
-import * as React from "react";
-import CssBaseline from "@mui/material/CssBaseline";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Link from "@mui/material/Link";
-
+import {
+  CssBaseline,
+  Box,
+  Typography,
+  Container,
+  Link,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@mui/material";
+import { useState } from "react";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary">
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Niklas & Jennifer
+      <Link
+        color="inherit"
+        href="https://github.com/Jennifer-Raab/Pokefight-Frontend"
+      >
+        Jennifer & Niklas
       </Link>{" "}
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
 
 export default function StickyFooter() {
+  const [value, setValue] = useState(0);
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
-        minHeight: "100vh",
+        minHeight: "40vh",
       }}
     >
       <CssBaseline />
-      <Container component="main" sx={{ mt: 8, mb: 2 }} maxWidth="sm">
-        <Typography variant="h2" component="h1" gutterBottom></Typography>
-        <Typography variant="h5" component="h2" gutterBottom>
-          {"Pin a footer to the bottom of the viewport."}
-          {"The footer will move as the main element of the page grows."}
-        </Typography>
-        <Typography variant="body1">Hier ist ein Platzhalter.</Typography>
-      </Container>
       <Box
         component="footer"
         sx={{
@@ -49,9 +51,25 @@ export default function StickyFooter() {
         }}
       >
         <Container maxWidth="sm">
-          <Typography variant="body1">
-            My sticky footer can be found here.
-          </Typography>
+          <BottomNavigation
+            showLabels
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+          >
+            <BottomNavigationAction label="Facebook" icon={<FacebookIcon />} />
+            <BottomNavigationAction
+              label="Instagram"
+              icon={<InstagramIcon />}
+            />
+            <BottomNavigationAction label="Twitter" icon={<TwitterIcon />} />
+            <BottomNavigationAction
+              label="Email"
+              icon={<AlternateEmailIcon />}
+            />
+          </BottomNavigation>
+
           <Copyright />
         </Container>
       </Box>

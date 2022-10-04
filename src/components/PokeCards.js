@@ -1,14 +1,15 @@
-import * as React from "react";
 import { Link } from "react-router-dom";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActionArea,
+  Button,
+  CardActions,
+} from "@mui/material";
 
-import Button from "@mui/material/Button";
-
-export default function ActionAreaCard({ pokemons }) {
+function PokeCards({ pokemons }) {
   return (
     <>
       {pokemons.length > 0 &&
@@ -18,7 +19,7 @@ export default function ActionAreaCard({ pokemons }) {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="140"
+                  height="160"
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
                   alt={pokemon.name.english}
                 />
@@ -40,8 +41,10 @@ export default function ActionAreaCard({ pokemons }) {
                       <li>Defense:{pokemon.base.Defense}</li>
                     </ul>
                   </Typography>
-                  <Button variant="contained">more Information</Button>
                 </CardContent>
+                <CardActions>
+                  <Button variant="contained">more Information</Button>
+                </CardActions>
               </CardActionArea>
             </Card>
           </Link>
@@ -49,3 +52,5 @@ export default function ActionAreaCard({ pokemons }) {
     </>
   );
 }
+
+export default PokeCards;

@@ -1,20 +1,25 @@
 import { useParams } from "react-router-dom";
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActionArea,
+  Button,
+} from "@mui/material";
+
 import useFetch from "./useFetch";
-import Button from "@mui/material/Button";
 
 export default function ActionAreaCard() {
   const { id } = useParams();
   const pokemons = useFetch();
 
-  const currentPokemon = pokemons?.find((pokemon) => id === pokemon.id);
-  if (pokemons) {
-    console.log("Ich bin Pokemons" + pokemons[0]);
+  let currentPokemon;
+
+  if (id && pokemons) {
+    //id aus useParams muss zur Number umgebaut werden.
+    // oder "==" statt "===" verwenden!
+    currentPokemon = pokemons.find((pokemon) => pokemon.id === parseInt(id));
   }
 
   return (
