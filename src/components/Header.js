@@ -76,6 +76,8 @@ export default function SearchAppBar() {
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             <Link to={"/"}>PokeFight</Link>
+            <Link to={"/arena"}>Arena</Link>
+            <Link to={"/leaderboard"}>Leaderboard</Link>
           </Typography>
 
           <Search>
