@@ -3,10 +3,12 @@ import { useState } from "react";
 import PokeCards from "./PokeCards";
 import "./PokeFight.css";
 import { Grid } from "@mui/material";
+import { FlashOnTwoTone } from "@mui/icons-material";
 
 function PokeFight() {
   const [firstPokemon, setFirstPokemon] = useState();
   const [secondPokemon, setSecondPokemon] = useState();
+  const [winner, setWinner] = useState(false);
   const pokemons = useFetch();
   console.log(pokemons);
   const randomPokemon = (pokemons) => {
@@ -21,11 +23,10 @@ function PokeFight() {
   function fight() {
     if (firstPokemon.base.HP > secondPokemon.base.HP) {
       setSecondPokemon("");
-      return `<h1>Sieger</h1>`;
     } else {
       setFirstPokemon("");
-      return `<h1>Sieger</h1>`;
     }
+    setWinner(true);
   }
 
   return (
@@ -45,7 +46,12 @@ function PokeFight() {
       >
         choose Pokemon 2
       </button>
-      <Grid container>
+      <Grid container justifyContent="center">
+        {winner && (
+          <Grid item xs={12}>
+            <h1 className="winner">Sieger</h1>
+          </Grid>
+        )}
         <Grid item xs={6}>
           {firstPokemon && <PokeCards pokemons={[firstPokemon]} />}
         </Grid>

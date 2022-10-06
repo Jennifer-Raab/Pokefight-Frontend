@@ -15,13 +15,14 @@ import {
 
 function PokeCards({ pokemons }) {
   const navigation = useNavigate();
+  const pokelength = pokemons.length === 1 ? 6 : 3;
   console.log(pokemons);
   return (
     <>
       <Grid container spacing={1}>
         {pokemons.length > 0 &&
           pokemons.map((pokemon) => (
-            <Grid item xs={3}>
+            <Grid item xs={pokelength}>
               {/* <Link to={}> */}
               <Card sx={{ maxWidth: 320, mt: 3 }} key={pokemon.id}>
                 <CardActionArea

@@ -12,13 +12,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="detail/:id" element={<PokeCardDetail />} />
-        <Route path="*" element={<ErrorPage />} />
-        <Route path="/arena" element={<PokeFight />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
-      </Routes>
+      <div className="fullScreen">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="detail/:id" element={<PokeCardDetail />} />
+          <Route path="*" element={<ErrorPage />} />
+          <Route path="/arena" element={<PokeFight />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
