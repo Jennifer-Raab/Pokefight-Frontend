@@ -6,10 +6,7 @@ import {
   CardMedia,
   Typography,
   CardActionArea,
-  Button,
-  CardActions,
   Grid,
-  Item,
 } from "@mui/material";
 
 function PokeCards({ pokemons }) {
