@@ -10,6 +10,7 @@ import {
   CardActions,
   Grid,
   Item,
+  spacing,
 } from "@mui/material";
 
 function PokeCards({ pokemons }) {
@@ -17,12 +18,12 @@ function PokeCards({ pokemons }) {
   console.log(pokemons);
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container spacing={1}>
         {pokemons.length > 0 &&
           pokemons.map((pokemon) => (
             <Grid item xs={3}>
               {/* <Link to={}> */}
-              <Card sx={{ maxWidth: 345 }} key={pokemon.id}>
+              <Card sx={{ maxWidth: 320, mt: 3 }} key={pokemon.id}>
                 <CardActionArea
                   onClick={() => navigation(`/detail/${pokemon.id}`)}
                 >
@@ -45,10 +46,8 @@ function PokeCards({ pokemons }) {
                       </Grid>
                       <Grid item xs={6}>
                         <Typography variant="body2" color="text.secondary">
-                          <ul>
-                            <li>Attack: {pokemon.base.Attack}</li>
-                            <li>Defense: {pokemon.base.Defense}</li>
-                          </ul>
+                          <p>Attack: {pokemon.base.Attack}</p>
+                          <p>Defense: {pokemon.base.Defense}</p>
                           {/* <ul>
                           <li>type:</li>
                           <li>{pokemon.type[0]},</li>
@@ -58,10 +57,8 @@ function PokeCards({ pokemons }) {
                       </Grid>
                       <Grid item xs={6}>
                         <Typography variant="body2" color="text.secondary">
-                          <ul>
-                            <li>Sp.Attack: {pokemon.base.Sp[" Attack"]}</li>
-                            <li>Defense: {pokemon.base.Sp[" Defense"]}</li>
-                          </ul>
+                          <p>Sp.Attack: {pokemon.base.Sp[" Attack"]}</p>
+                          <p>Sp.Defense: {pokemon.base.Sp[" Defense"]}</p>
                         </Typography>
                       </Grid>
                     </Grid>

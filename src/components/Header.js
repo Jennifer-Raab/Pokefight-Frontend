@@ -7,10 +7,13 @@ import {
   IconButton,
   Typography,
   InputBase,
+  Grid,
+  spacing,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -64,7 +67,7 @@ export default function SearchAppBar() {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2, px: 5 }}
           >
             <MenuIcon />
           </IconButton>
@@ -75,9 +78,17 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <Link to={"/"}>PokeFight</Link>
-            <Link to={"/arena"}>Arena</Link>
-            <Link to={"/leaderboard"}>Leaderboard</Link>
+            <Grid container>
+              <Grid item xs={3}>
+                <Link to={"/"}>PokeFight</Link>
+              </Grid>
+              <Grid item xs={3}>
+                <Link to={"/arena"}>Arena</Link>
+              </Grid>
+              <Grid item xs={3}>
+                <Link to={"/leaderboard"}>Leaderboard</Link>
+              </Grid>
+            </Grid>
           </Typography>
 
           <Search>

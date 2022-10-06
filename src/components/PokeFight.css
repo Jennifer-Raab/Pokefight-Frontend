@@ -1,3 +1,14 @@
 .pokeFight-Container {
   background-image: url("https://www.ilucki.com/b/booming/GladiatorArena.jpg");
+  height: 600px;
+  padding: 2rem;
+}
+
+.PokeButton {
+  font-size: 20px;
+  padding: 1.5rem;
+  margin: 1rem;
+  color: aliceblue;
+  background-color: black;
+  font-weight: 700;
 }

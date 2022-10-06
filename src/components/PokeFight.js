@@ -2,6 +2,7 @@ import useFetch from "./useFetch";
 import { useState } from "react";
 import PokeCards from "./PokeCards";
 import "./PokeFight.css";
+import { Grid } from "@mui/material";
 
 function PokeFight() {
   const [firstPokemon, setFirstPokemon] = useState();
@@ -29,15 +30,29 @@ function PokeFight() {
 
   return (
     <div className="pokeFight-Container">
-      <button onClick={() => setFirstPokemon(randomPokemon(pokemons))}>
+      <button
+        className="PokeButton"
+        onClick={() => setFirstPokemon(randomPokemon(pokemons))}
+      >
         choose Pokemon 1
       </button>
-      <button onClick={() => fight()}>Fight</button>
-      <button onClick={() => setSecondPokemon(randomPokemon(pokemons))}>
+      <button className="PokeButton" onClick={() => fight()}>
+        Fight
+      </button>
+      <button
+        className="PokeButton"
+        onClick={() => setSecondPokemon(randomPokemon(pokemons))}
+      >
         choose Pokemon 2
       </button>
-      {firstPokemon && <PokeCards pokemons={[firstPokemon]} />}
-      {secondPokemon && <PokeCards pokemons={[secondPokemon]} />}
+      <Grid container>
+        <Grid item xs={6}>
+          {firstPokemon && <PokeCards pokemons={[firstPokemon]} />}
+        </Grid>
+        <Grid item xs={6}>
+          {secondPokemon && <PokeCards pokemons={[secondPokemon]} />}
+        </Grid>
+      </Grid>
     </div>
   );
 }
