@@ -9,7 +9,7 @@ function Leaderboard() {
       <tr>
         <th>Poke-ID</th>
         <th>Name</th>
-        <th>Anzahl Siege</th>
+        <th>Anzahl Siegee</th>
       </tr>
       {leaderboard &&
         leaderboard.map((entrie) => (
