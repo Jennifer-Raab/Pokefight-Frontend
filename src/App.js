@@ -6,7 +6,7 @@ import Main from "./components/Main";
 import PokeCardDetail from "./components/PokeCardDetails";
 import ErrorPage from "./components/ErrorPage";
 import PokeFight from "./components/PokeFight";
-import { Leaderboard } from "@mui/icons-material";
+import Leaderboard from "./components/Leaderboard";
 
 function App() {
   return (
